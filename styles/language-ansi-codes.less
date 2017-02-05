@@ -1,0 +1,73 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+@import "syntax-variables";
+
+.syntax--ansi {
+  .syntax--controlchar {
+    // color: fadeout(@syntax-text-color, 90%);
+    display: none;
+  }
+
+  .syntax--style {
+    &.syntax--bold {
+      font-weight: bold;
+    }
+    &.syntax--italic {
+      font-style: italic;
+    }
+    &.syntax--underline {
+      text-decoration: underline;
+    }
+    &.syntax--strike {
+      text-decoration: line-through;
+    }
+    &.syntax--hidden {
+      display: none;
+    }
+  }
+
+  .syntax--color {
+    &.syntax--fg {
+      &.syntax--black   { color: black; }
+      &.syntax--red     { color: darkred; }
+      &.syntax--green   { color: darkgreen; }
+      &.syntax--yellow  { color: yellow; }
+      &.syntax--blue    { color: darkblue; }
+      &.syntax--magenta { color: purple; }
+      &.syntax--cyan    { color: darkcyan; }
+      &.syntax--white   { color: lightgray; }
+
+      &.syntax--bright.syntax--black  { color: gray; }
+      &.syntax--bright.syntax--red    { color: red; }
+      &.syntax--bright.syntax--green  { color: green; }
+      &.syntax--bright.syntax--yellow { color: rgb(255, 255, 200); }
+      &.syntax--bright.syntax--blue   { color: blue; }
+      &.syntax--bright.syntax--purple { color: magenta; }
+      &.syntax--bright.syntax--cyan   { color: cyan; }
+      &.syntax--bright.syntax--white  { color: white; }
+    }
+
+    &.syntax--bg {
+      &.syntax--black   { background-color: black; }
+      &.syntax--red     { background-color: darkred; }
+      &.syntax--green   { background-color: darkgreen; }
+      &.syntax--yellow  { background-color: yellow; }
+      &.syntax--blue    { background-color: darkblue; }
+      &.syntax--magenta { background-color: purple; }
+      &.syntax--cyan    { background-color: darkcyan; }
+      &.syntax--white   { background-color: lightgray; }
+
+      &.syntax--bright.syntax--black  { background-color: gray; }
+      &.syntax--bright.syntax--red    { background-color: red; }
+      &.syntax--bright.syntax--green  { background-color: green; }
+      &.syntax--bright.syntax--yellow { background-color: rgb(255, 255, 200); }
+      &.syntax--bright.syntax--blue   { background-color: blue; }
+      &.syntax--bright.syntax--purple { background-color: magenta; }
+      &.syntax--bright.syntax--cyan   { background-color: cyan; }
+      &.syntax--bright.syntax--white  { background-color: white; }
+    }
+  }
+}
