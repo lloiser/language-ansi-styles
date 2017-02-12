@@ -202,6 +202,7 @@ describe('LanguageAnsiCodes', () => {
         scopes(', default',     'ansi')
       ]
     ],
+
     [
       'handles a reset',
       '\x1b[1mthis is bold\x1b[0m, but this isn\'t',
@@ -222,6 +223,7 @@ describe('LanguageAnsiCodes', () => {
         scopes(', but this isn\'t', 'ansi')
       ]
     ],
+
     [
       'handles multiple styles, fg and bg color',
       'normal, \x1b[1mbold, \x1b[4munderline, \x1b[3mitalic, \x1b[31mred fg, \x1b[44mblue bg\x1b[0m, normal',
@@ -241,6 +243,7 @@ describe('LanguageAnsiCodes', () => {
         scopes(', normal',    'ansi')
       ]
     ],
+
     [
       'renders multi-attribute sequences',
       'normal, \x1b[1;4;3;31;44mbold, underline, italic, red fg and blue bg\x1b[0m, normal',
@@ -280,6 +283,7 @@ describe('LanguageAnsiCodes', () => {
         scopes(', normal',                                    'ansi')
       ]
     ],
+
     [
       'reset fg color',
       '\x1b[30mblack\x1b[39mdefault',
@@ -301,8 +305,20 @@ describe('LanguageAnsiCodes', () => {
       ]
     ],
     [
-      'reset bg and fg color',
-      '\x1b[31;44mred fg & blue bg\x1b[39mblue bg\x1b[39mdefault',
+      'resets bg and fg color in order',
+      '\x1b[31;44mred fg & blue bg\x1b[49mred fg\x1b[39mdefault',
+      [
+        scopes('\x1b[31;44m',      'ansi', 'controlchar'),
+        scopes('red fg & blue bg', 'ansi', 'color.fg.red', 'color.bg.blue'),
+        scopes('\x1b[49m',         'ansi', 'color.fg.red', 'color.bg.blue', 'controlchar'),
+        scopes('red fg',           'ansi', 'color.fg.red'),
+        scopes('\x1b[39m',         'ansi', 'color.fg.red', 'controlchar'),
+        scopes('default',          'ansi')
+      ]
+    ],
+    [
+      'resets bg and fg color in wrong order',
+      '\x1b[31;44mred fg & blue bg\x1b[39mblue bg\x1b[49mdefault',
       [
         scopes('\x1b[31;44m',      'ansi', 'controlchar'),
         scopes('red fg & blue bg', 'ansi', 'color.fg.red', 'color.bg.blue'),
@@ -313,9 +329,60 @@ describe('LanguageAnsiCodes', () => {
       ]
     ],
 
-    // TODO add way more tests!
-    // * bg color
-    // * multiple open and closes of the same color and style
+    [
+      'skips reset underline if not underlined',
+      'not \x1b[24munderline',
+      [
+        scopes('not ',      'ansi'),
+        scopes('\x1b[24m',  'ansi', 'controlchar'),
+        scopes('underline', 'ansi')
+      ]
+    ],
+    [
+      'skips reset bold if not bold',
+      'not \x1b[21mbold',
+      [
+        scopes('not ',      'ansi'),
+        scopes('\x1b[21m',  'ansi', 'controlchar'),
+        scopes('bold', 'ansi')
+      ]
+    ],
+    [
+      'skips reset italic if not italic',
+      'not \x1b[23mitalic',
+      [
+        scopes('not ',      'ansi'),
+        scopes('\x1b[23m',  'ansi', 'controlchar'),
+        scopes('italic', 'ansi')
+      ]
+    ],
+    [
+      'skips reset strike if not strike',
+      'not \x1b[29mstrike',
+      [
+        scopes('not ',      'ansi'),
+        scopes('\x1b[29m',  'ansi', 'controlchar'),
+        scopes('strike', 'ansi')
+      ]
+    ],
+    [
+      'skips reset blink if not blink',
+      'not \x1b[25mblink',
+      [
+        scopes('not ',      'ansi'),
+        scopes('\x1b[25m',  'ansi', 'controlchar'),
+        scopes('blink', 'ansi')
+      ]
+    ],
+    [
+      'skips reset hidden if not hidden',
+      'not \x1b[28mhidden',
+      [
+        scopes('not ',      'ansi'),
+        scopes('\x1b[28m',  'ansi', 'controlchar'),
+        scopes('hidden', 'ansi')
+      ]
+    ]
   ]
 
   describe('tokenizeLines', () => {
