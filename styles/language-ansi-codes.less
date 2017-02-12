@@ -8,7 +8,7 @@
 .syntax--ansi {
   .syntax--controlchar {
     // color: fadeout(@syntax-text-color, 90%);
-    display: none;
+    visibility: hidden;
   }
 
   .syntax--style {
@@ -25,7 +25,10 @@
       text-decoration: line-through;
     }
     &.syntax--hidden {
-      display: none;
+      visibility: hidden;
+    }
+    &.syntax--blink {
+      animation: ansi_codes_blink 2s linear infinite;
     }
   }
 
@@ -70,4 +73,8 @@
       &.syntax--bright.syntax--white  { background-color: white; }
     }
   }
+}
+
+@keyframes ansi_codes_blink {
+  50% { opacity: 0; }
 }
