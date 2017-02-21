@@ -1,10 +1,10 @@
 {
-  "name": "language-ansi-codes",
+  "name": "language-ansi-styles",
   "main": "./lib/main",
-  "version": "0.0.0",
-  "description": "A short description of your package",
+  "version": "0.0.1",
+  "description": "atom grammar for ANSI SGR styles",
   "keywords": [],
-  "repository": "https://github.com/atom/language-ansi-codes",
+  "repository": "https://github.com/lloiser/language-ansi-styles",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

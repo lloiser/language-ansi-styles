@@ -4,13 +4,13 @@
 /* eslint no-multi-spaces: 0 */
 
 import * as os from 'os'
-import AnsiGrammar from '../lib/ansi-grammar.js'
+import AnsiStylesGrammar from '../lib/ansi-styles-grammar'
 
 describe('LanguageAnsiCodes', () => {
   let grammar = null
 
   beforeEach(() => {
-    grammar = new AnsiGrammar(atom.grammars)
+    grammar = new AnsiStylesGrammar(atom.grammars)
   })
 
   function scopes (value, ...scopes) {
