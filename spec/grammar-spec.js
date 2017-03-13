@@ -419,6 +419,20 @@ describe('LanguageAnsiCodes', () => {
         scopes('\x1b[2K', 'ansi', 'controlchar'),
         scopes('world',  'ansi')
       ]
+    ],
+
+    [
+      'safe close color',
+      '[40m[2J[0;34mblue [1;32mbold green[A',
+      [
+        scopes('\x1b[40m',   'ansi', 'controlchar'),
+        scopes('\x1b[2J',    'ansi', 'color.bg.black', 'controlchar'),
+        scopes('\x1b[0;34m', 'ansi', 'color.bg.black', 'controlchar'),
+        scopes('blue ',      'ansi', 'color.fg.blue'),
+        scopes('\x1b[1;32m', 'ansi', 'color.fg.blue', 'controlchar'),
+        scopes('bold green', 'ansi', 'style.bold', 'color.fg.green'),
+        scopes('\x1b[A',     'ansi', 'style.bold', 'color.fg.green', 'controlchar')
+      ]
     ]
   ]
 
