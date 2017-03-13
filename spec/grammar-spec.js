@@ -382,6 +382,43 @@ describe('LanguageAnsiCodes', () => {
         scopes('\x1b[28m',  'ansi', 'controlchar'),
         scopes('hidden', 'ansi')
       ]
+    ],
+
+    [
+      'ignores other escape sequences',
+      'hello \x1b[Kworld',
+      [
+        scopes('hello ', 'ansi'),
+        scopes('\x1b[K', 'ansi', 'controlchar'),
+        scopes('world',  'ansi')
+      ]
+    ],
+    [
+      'ignores other escape sequences with 0 parameter',
+      'hello \x1b[0Kworld',
+      [
+        scopes('hello ', 'ansi'),
+        scopes('\x1b[0K', 'ansi', 'controlchar'),
+        scopes('world',  'ansi')
+      ]
+    ],
+    [
+      'ignores other escape sequences with 1 parameter',
+      'hello \x1b[1Kworld',
+      [
+        scopes('hello ', 'ansi'),
+        scopes('\x1b[1K', 'ansi', 'controlchar'),
+        scopes('world',  'ansi')
+      ]
+    ],
+    [
+      'ignores other escape sequences with 2 parameter',
+      'hello \x1b[2Kworld',
+      [
+        scopes('hello ', 'ansi'),
+        scopes('\x1b[2K', 'ansi', 'controlchar'),
+        scopes('world',  'ansi')
+      ]
     ]
   ]
 
