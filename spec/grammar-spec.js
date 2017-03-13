@@ -137,6 +137,17 @@ describe('LanguageAnsiCodes', () => {
       ]
     ],
     [
+      'renders faint',
+      'faint: \x1b[2mthat\x1b[22m, default',
+      [
+        scopes('faint: ',  'ansi'),
+        scopes('\x1b[2m',   'ansi', 'controlchar'),
+        scopes('that',      'ansi', 'style.faint'),
+        scopes('\x1b[22m',  'ansi', 'style.faint', 'controlchar'),
+        scopes(', default', 'ansi')
+      ]
+    ],
+    [
       'renders strikethrough',
       'strike: \x1b[9mthat\x1b[29m, default',
       [
