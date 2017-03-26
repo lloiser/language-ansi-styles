@@ -1,4 +1,4 @@
-# [language-ansi-styles package](https://atom.io/packages/language-ansi-styles package)
+# [language-ansi-styles](https://atom.io/packages/language-ansi-styles)
 
 Converts ANSI escape sequences into formatted text like in your terminal/shell.
 
