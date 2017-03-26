@@ -15,6 +15,15 @@
   "devDependencies": {
     "standard": "^8.6.0"
   },
+  "configSchema": {
+    "hideEscapeSequences": {
+      "title": "Hide escape sequences",
+      "description": "This hides all escape sequences and only displays the bare text with the style/color applied to it. NOTE: this causes the selection and cursor handling in atom to stop work as expected!",
+      "type": "boolean",
+      "default": false,
+      "order": 1
+    }
+  },
   "standard": {
     "globals": [
       "atom",

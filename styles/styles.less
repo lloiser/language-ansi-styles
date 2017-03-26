@@ -1,7 +1,9 @@
 .syntax--ansi {
-  .syntax--controlchar {
-    // color: fadeout(@syntax-text-color, 90%);
+  .syntax--codes {
     visibility: hidden;
+    &.syntax--hidden {
+      display: none;
+    }
   }
 
   .syntax--style {
