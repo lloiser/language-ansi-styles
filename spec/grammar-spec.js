@@ -28,15 +28,15 @@ describe('LanguageAnsiCodes', () => {
         [
           scopes('colors: ',   'ansi'),
           scopes('\x1b[30m',   'ansi', 'codes'),
-          scopes('black',      'ansi', 'color-fg-0'),
-          scopes('\x1b[33m',   'ansi', 'color-fg-0', 'codes'),
-          scopes('yellow\r',   'ansi', 'color-fg-3')
+          scopes('black',      'ansi', 'color.fg-0'),
+          scopes('\x1b[33m',   'ansi', 'color.fg-0', 'codes'),
+          scopes('yellow\r',   'ansi', 'color.fg-3')
         ],
         [
-          scopes('hello "Mr. ',    'ansi', 'color-fg-3'),
-          scopes('\x1b[32m',       'ansi', 'color-fg-3', 'codes'),
-          scopes('Green',          'ansi', 'color-fg-2'),
-          scopes('\x1b[m',         'ansi', 'color-fg-2', 'codes'),
+          scopes('hello "Mr. ',    'ansi', 'color.fg-3'),
+          scopes('\x1b[32m',       'ansi', 'color.fg-3', 'codes'),
+          scopes('Green',          'ansi', 'color.fg-2'),
+          scopes('\x1b[m',         'ansi', 'color.fg-2', 'codes'),
           scopes('" how are you?', 'ansi')
         ]
       ]
@@ -55,13 +55,13 @@ describe('LanguageAnsiCodes', () => {
         [
           scopes('one default ', 'ansi'),
           scopes('\x1b[35m',     'ansi', 'codes'),
-          scopes(' magenta ',    'ansi', 'color-fg-5'),
-          scopes('\x1b[91m',     'ansi', 'color-fg-5', 'codes'),
-          scopes(' red\r',       'ansi', 'color-fg-9')
+          scopes(' magenta ',    'ansi', 'color.fg-5'),
+          scopes('\x1b[91m',     'ansi', 'color.fg-5', 'codes'),
+          scopes(' red\r',       'ansi', 'color.fg-9')
         ],
         [
-          scopes('two red ',     'ansi', 'color-fg-9'),
-          scopes('\x1b[0m',      'ansi', 'color-fg-9', 'codes'),
+          scopes('two red ',     'ansi', 'color.fg-9'),
+          scopes('\x1b[0m',      'ansi', 'color.fg-9', 'codes'),
           scopes(' default\r',   'ansi')
         ],
         [
@@ -72,15 +72,15 @@ describe('LanguageAnsiCodes', () => {
         [
           scopes('four default ',   'ansi'),
           scopes('\x1b[35m',        'ansi', 'codes'),
-          scopes(' magenta ',       'ansi', 'color-fg-5'),
-          scopes('\x1b[90m',        'ansi', 'color-fg-5', 'codes'),
-          scopes(' bright black\r', 'ansi', 'color-fg-8')
+          scopes(' magenta ',       'ansi', 'color.fg-5'),
+          scopes('\x1b[90m',        'ansi', 'color.fg-5', 'codes'),
+          scopes(' bright black\r', 'ansi', 'color.fg-8')
         ],
         [
-          scopes('five bright black ', 'ansi', 'color-fg-8'),
-          scopes('\x1b[32;1m',         'ansi', 'color-fg-8', 'codes'),
-          scopes(' green bold ',       'ansi', 'color-fg-2', 'style.bold'),
-          scopes('\x1b[0;m',           'ansi', 'color-fg-2', 'style.bold', 'codes'),
+          scopes('five bright black ', 'ansi', 'color.fg-8'),
+          scopes('\x1b[32;1m',         'ansi', 'color.fg-8', 'codes'),
+          scopes(' green bold ',       'ansi', 'color.fg-2', 'style.bold'),
+          scopes('\x1b[0;m',           'ansi', 'color.fg-2', 'style.bold', 'codes'),
           scopes(' default',           'ansi')
         ]
       ]
@@ -98,9 +98,9 @@ describe('LanguageAnsiCodes', () => {
       expected: [
         scopes('colors: ', 'ansi'),
         scopes('\x1b[30m', 'ansi', 'codes'),
-        scopes('black',    'ansi', 'color-fg-0'),
-        scopes('\x1b[37m', 'ansi', 'color-fg-0', 'codes'),
-        scopes('white',    'ansi', 'color-fg-7')
+        scopes('black',    'ansi', 'color.fg-0'),
+        scopes('\x1b[37m', 'ansi', 'color.fg-0', 'codes'),
+        scopes('white',    'ansi', 'color.fg-7')
       ]
     },
     {
@@ -109,9 +109,9 @@ describe('LanguageAnsiCodes', () => {
       expected: [
         scopes('colors: ', 'ansi'),
         scopes('\x1b[90m', 'ansi', 'codes'),
-        scopes('black',    'ansi', 'color-fg-8'),
-        scopes('\x1b[97m', 'ansi', 'color-fg-8', 'codes'),
-        scopes('white',    'ansi', 'color-fg-15')
+        scopes('black',    'ansi', 'color.fg-8'),
+        scopes('\x1b[97m', 'ansi', 'color.fg-8', 'codes'),
+        scopes('white',    'ansi', 'color.fg-15')
       ]
     },
     {
@@ -120,9 +120,9 @@ describe('LanguageAnsiCodes', () => {
       expected: [
         scopes('colors: ', 'ansi'),
         scopes('\x1b[40m', 'ansi', 'codes'),
-        scopes('black',    'ansi', 'color-bg-0'),
-        scopes('\x1b[47m', 'ansi', 'color-bg-0', 'codes'),
-        scopes('white',    'ansi', 'color-bg-7')
+        scopes('black',    'ansi', 'color.bg-0'),
+        scopes('\x1b[47m', 'ansi', 'color.bg-0', 'codes'),
+        scopes('white',    'ansi', 'color.bg-7')
       ]
     },
     {
@@ -131,9 +131,9 @@ describe('LanguageAnsiCodes', () => {
       expected: [
         scopes('colors: ',  'ansi'),
         scopes('\x1b[100m', 'ansi', 'codes'),
-        scopes('black',     'ansi', 'color-bg-8'),
-        scopes('\x1b[107m', 'ansi', 'color-bg-8', 'codes'),
-        scopes('white',     'ansi', 'color-bg-15')
+        scopes('black',     'ansi', 'color.bg-8'),
+        scopes('\x1b[107m', 'ansi', 'color.bg-8', 'codes'),
+        scopes('white',     'ansi', 'color.bg-15')
       ]
     },
 
@@ -143,8 +143,8 @@ describe('LanguageAnsiCodes', () => {
       expected: [
         scopes('colors: ',        'ansi'),
         scopes('\x1b[38;5;196m',  'ansi', 'codes'),
-        scopes('extended fg red', 'ansi', 'color-fg-196'),
-        scopes('\x1b[0m',         'ansi', 'color-fg-196', 'codes'),
+        scopes('extended fg red', 'ansi', 'color.fg-196'),
+        scopes('\x1b[0m',         'ansi', 'color.fg-196', 'codes'),
         scopes('default',         'ansi')
       ]
     },
@@ -154,8 +154,8 @@ describe('LanguageAnsiCodes', () => {
       expected: [
         scopes('colors: ',        'ansi'),
         scopes('\x1b[48;5;196m',  'ansi', 'codes'),
-        scopes('extended bg red', 'ansi', 'color-bg-196'),
-        scopes('\x1b[0m',         'ansi', 'color-bg-196', 'codes'),
+        scopes('extended bg red', 'ansi', 'color.bg-196'),
+        scopes('\x1b[0m',         'ansi', 'color.bg-196', 'codes'),
         scopes('default',         'ansi')
       ]
     },
@@ -169,11 +169,11 @@ describe('LanguageAnsiCodes', () => {
         [
           scopes('colors: ',          'ansi'),
           scopes('\x1b[38;5;196m',    'ansi', 'codes'),
-          scopes('extended fg red\r', 'ansi', 'color-fg-196')
+          scopes('extended fg red\r', 'ansi', 'color.fg-196')
         ],
         [
-          scopes('still fg red',      'ansi', 'color-fg-196'),
-          scopes('\x1b[0m',           'ansi', 'color-fg-196', 'codes'),
+          scopes('still fg red',      'ansi', 'color.fg-196'),
+          scopes('\x1b[0m',           'ansi', 'color.fg-196', 'codes'),
           scopes('default',           'ansi')
         ]
       ]
@@ -188,11 +188,11 @@ describe('LanguageAnsiCodes', () => {
         [
           scopes('colors: ',          'ansi'),
           scopes('\x1b[48;5;196m',    'ansi', 'codes'),
-          scopes('extended bg red\r', 'ansi', 'color-bg-196')
+          scopes('extended bg red\r', 'ansi', 'color.bg-196')
         ],
         [
-          scopes('still bg red',    'ansi', 'color-bg-196'),
-          scopes('\x1b[0m',         'ansi', 'color-bg-196', 'codes'),
+          scopes('still bg red',    'ansi', 'color.bg-196'),
+          scopes('\x1b[0m',         'ansi', 'color.bg-196', 'codes'),
           scopes('default',         'ansi')
         ]
       ]
@@ -309,10 +309,10 @@ describe('LanguageAnsiCodes', () => {
         scopes('\x1b[3m',     'ansi', 'style.bold', 'style.underline', 'codes'),
         scopes('italic, ',    'ansi', 'style.bold', 'style.underline', 'style.italic'),
         scopes('\x1b[31m',    'ansi', 'style.bold', 'style.underline', 'style.italic', 'codes'),
-        scopes('red fg, ',    'ansi', 'style.bold', 'style.underline', 'style.italic', 'color-fg-1'),
-        scopes('\x1b[44m',    'ansi', 'style.bold', 'style.underline', 'style.italic', 'color-fg-1', 'codes'),
-        scopes('blue bg',     'ansi', 'style.bold', 'style.underline', 'style.italic', 'color-fg-1', 'color-bg-4'),
-        scopes('\x1b[0m',     'ansi', 'style.bold', 'style.underline', 'style.italic', 'color-fg-1', 'color-bg-4', 'codes'),
+        scopes('red fg, ',    'ansi', 'style.bold', 'style.underline', 'style.italic', 'color.fg-1'),
+        scopes('\x1b[44m',    'ansi', 'style.bold', 'style.underline', 'style.italic', 'color.fg-1', 'codes'),
+        scopes('blue bg',     'ansi', 'style.bold', 'style.underline', 'style.italic', 'color.fg-1', 'color.bg-4'),
+        scopes('\x1b[0m',     'ansi', 'style.bold', 'style.underline', 'style.italic', 'color.fg-1', 'color.bg-4', 'codes'),
         scopes(', normal',    'ansi')
       ]
     },
@@ -325,11 +325,11 @@ describe('LanguageAnsiCodes', () => {
         scopes('\x1b[1;4;3;31;44m', 'ansi', 'codes'),
         scopes(
           'bold, underline, italic, red fg and blue bg',
-          'ansi', 'style.bold', 'style.underline', 'style.italic', 'color-fg-1', 'color-bg-4'
+          'ansi', 'style.bold', 'style.underline', 'style.italic', 'color.fg-1', 'color.bg-4'
         ),
         scopes(
           '\x1b[0m',
-          'ansi', 'style.bold', 'style.underline', 'style.italic', 'color-fg-1', 'color-bg-4', 'codes'
+          'ansi', 'style.bold', 'style.underline', 'style.italic', 'color.fg-1', 'color.bg-4', 'codes'
         ),
         scopes(', normal', 'ansi')
       ]
@@ -342,11 +342,11 @@ describe('LanguageAnsiCodes', () => {
         scopes('\x1b[1;4;3;31;44;m', 'ansi', 'codes'),
         scopes(
           'bold, underline, italic, red fg and blue bg',
-          'ansi', 'style.bold', 'style.underline', 'style.italic', 'color-fg-1', 'color-bg-4'
+          'ansi', 'style.bold', 'style.underline', 'style.italic', 'color.fg-1', 'color.bg-4'
         ),
         scopes(
           '\x1b[0m',
-          'ansi', 'style.bold', 'style.underline', 'style.italic', 'color-fg-1', 'color-bg-4', 'codes'
+          'ansi', 'style.bold', 'style.underline', 'style.italic', 'color.fg-1', 'color.bg-4', 'codes'
         ),
         scopes(', normal', 'ansi')
       ]
@@ -368,8 +368,8 @@ describe('LanguageAnsiCodes', () => {
       lines: '\x1b[30mblack\x1b[39mdefault',
       expected: [
         scopes('\x1b[30m', 'ansi', 'codes'),
-        scopes('black',    'ansi', 'color-fg-0'),
-        scopes('\x1b[39m', 'ansi', 'color-fg-0', 'codes'),
+        scopes('black',    'ansi', 'color.fg-0'),
+        scopes('\x1b[39m', 'ansi', 'color.fg-0', 'codes'),
         scopes('default',  'ansi')
       ]
     },
@@ -378,8 +378,8 @@ describe('LanguageAnsiCodes', () => {
       lines: '\x1b[40mblack\x1b[49mdefault',
       expected: [
         scopes('\x1b[40m', 'ansi', 'codes'),
-        scopes('black',    'ansi', 'color-bg-0'),
-        scopes('\x1b[49m', 'ansi', 'color-bg-0', 'codes'),
+        scopes('black',    'ansi', 'color.bg-0'),
+        scopes('\x1b[49m', 'ansi', 'color.bg-0', 'codes'),
         scopes('default',  'ansi')
       ]
     },
@@ -388,10 +388,10 @@ describe('LanguageAnsiCodes', () => {
       lines: '\x1b[31;44mred fg & blue bg\x1b[49mred fg\x1b[39mdefault',
       expected: [
         scopes('\x1b[31;44m',      'ansi', 'codes'),
-        scopes('red fg & blue bg', 'ansi', 'color-fg-1', 'color-bg-4'),
-        scopes('\x1b[49m',         'ansi', 'color-fg-1', 'color-bg-4', 'codes'),
-        scopes('red fg',           'ansi', 'color-fg-1'),
-        scopes('\x1b[39m',         'ansi', 'color-fg-1', 'codes'),
+        scopes('red fg & blue bg', 'ansi', 'color.fg-1', 'color.bg-4'),
+        scopes('\x1b[49m',         'ansi', 'color.fg-1', 'color.bg-4', 'codes'),
+        scopes('red fg',           'ansi', 'color.fg-1'),
+        scopes('\x1b[39m',         'ansi', 'color.fg-1', 'codes'),
         scopes('default',          'ansi')
       ]
     },
@@ -400,10 +400,10 @@ describe('LanguageAnsiCodes', () => {
       lines: '\x1b[31;44mred fg & blue bg\x1b[39mblue bg\x1b[49mdefault',
       expected: [
         scopes('\x1b[31;44m',      'ansi', 'codes'),
-        scopes('red fg & blue bg', 'ansi', 'color-fg-1', 'color-bg-4'),
-        scopes('\x1b[39m',         'ansi', 'color-fg-1', 'color-bg-4', 'codes'),
-        scopes('blue bg',          'ansi', 'color-bg-4'),
-        scopes('\x1b[49m',         'ansi', 'color-bg-4', 'codes'),
+        scopes('red fg & blue bg', 'ansi', 'color.fg-1', 'color.bg-4'),
+        scopes('\x1b[39m',         'ansi', 'color.fg-1', 'color.bg-4', 'codes'),
+        scopes('blue bg',          'ansi', 'color.bg-4'),
+        scopes('\x1b[49m',         'ansi', 'color.bg-4', 'codes'),
         scopes('default',          'ansi')
       ]
     },
@@ -504,12 +504,12 @@ describe('LanguageAnsiCodes', () => {
       lines: '\x1b[40m\x1b[2J\x1b[0;34mblue \x1b[1;32mbold green\x1b[A',
       expected: [
         scopes('\x1b[40m',   'ansi', 'codes'),
-        scopes('\x1b[2J',    'ansi', 'color-bg-0', 'codes'),
-        scopes('\x1b[0;34m', 'ansi', 'color-bg-0', 'codes'),
-        scopes('blue ',      'ansi', 'color-fg-4'),
-        scopes('\x1b[1;32m', 'ansi', 'color-fg-4', 'codes'),
-        scopes('bold green', 'ansi', 'style.bold', 'color-fg-2'),
-        scopes('\x1b[A',     'ansi', 'style.bold', 'color-fg-2', 'codes')
+        scopes('\x1b[2J',    'ansi', 'color.bg-0', 'codes'),
+        scopes('\x1b[0;34m', 'ansi', 'color.bg-0', 'codes'),
+        scopes('blue ',      'ansi', 'color.fg-4'),
+        scopes('\x1b[1;32m', 'ansi', 'color.fg-4', 'codes'),
+        scopes('bold green', 'ansi', 'style.bold', 'color.fg-2'),
+        scopes('\x1b[A',     'ansi', 'style.bold', 'color.fg-2', 'codes')
       ]
     },
 
@@ -519,13 +519,13 @@ describe('LanguageAnsiCodes', () => {
       hideEscapeSequences: true,
       expected: [
         scopes('\x1b[40m',   'ansi', 'codes.hidden'),
-        scopes('\x1b[2J',    'ansi', 'color-bg-0', 'codes.hidden'),
-        scopes('\x1b[0;34m', 'ansi', 'color-bg-0', 'codes.hidden'),
-        scopes('blue ',      'ansi', 'color-fg-4'),
-        scopes('\x1b[1;32m', 'ansi', 'color-fg-4', 'codes.hidden'),
-        scopes('bold green', 'ansi', 'style.bold', 'color-fg-2'),
-        scopes('\x1b[A',     'ansi', 'style.bold', 'color-fg-2', 'codes.hidden'),
-        scopes('\x1b[m',     'ansi', 'style.bold', 'color-fg-2', 'codes.hidden'),
+        scopes('\x1b[2J',    'ansi', 'color.bg-0', 'codes.hidden'),
+        scopes('\x1b[0;34m', 'ansi', 'color.bg-0', 'codes.hidden'),
+        scopes('blue ',      'ansi', 'color.fg-4'),
+        scopes('\x1b[1;32m', 'ansi', 'color.fg-4', 'codes.hidden'),
+        scopes('bold green', 'ansi', 'style.bold', 'color.fg-2'),
+        scopes('\x1b[A',     'ansi', 'style.bold', 'color.fg-2', 'codes.hidden'),
+        scopes('\x1b[m',     'ansi', 'style.bold', 'color.fg-2', 'codes.hidden'),
         scopes('default',    'ansi')
       ]
     }

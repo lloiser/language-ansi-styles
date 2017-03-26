@@ -34,10 +34,10 @@
 
 .for(length(@colors)); .-each(@i) {
   .syntax--ansi {
-    .syntax--color-fg-@{i} {
+    .syntax--color.syntax--fg-@{i} {
       color: extract(@colors, (@i + 1));
     }
-    .syntax--color-bg-@{i} {
+    .syntax--color.syntax--bg-@{i} {
       background-color: extract(@colors, (@i + 1));
     }
   }
