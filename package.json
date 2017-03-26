@@ -2,8 +2,14 @@
   "name": "language-ansi-styles",
   "main": "./lib/main",
   "version": "0.0.1",
-  "description": "atom grammar for ANSI SGR styles",
-  "keywords": [],
+  "description": "atom grammar for ANSI SGR styles / escape codes",
+  "keywords": [
+    "ansi",
+    "ANSI",
+    "grammar",
+    "SGR",
+    "log"
+  ],
   "repository": "https://github.com/lloiser/language-ansi-styles",
   "license": "MIT",
   "engines": {
@@ -13,7 +19,7 @@
     "ansi-regex": "^2.1.1"
   },
   "devDependencies": {
-    "standard": "^8.6.0"
+    "standard": "^9.0.2"
   },
   "configSchema": {
     "hideEscapeSequences": {
