@@ -1,7 +1,7 @@
 {
   "name": "language-ansi-styles",
   "main": "./lib/main",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "atom grammar for ANSI SGR styles / escape codes",
   "keywords": [
     "ansi",
